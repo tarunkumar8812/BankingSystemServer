@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router()
 // const { createBranch, getProfileForBankUse } = require("../controller/bankController");
-// const { createAccount, login, getProfile, updatePassword, forgotPassword, sendMoney, accountBalance, accountStatement, otpGenerate, deleteTransaction, paymentThroughDebitCard } = require("../controller/userController");
+const { createAccount, login, getProfile,
+    // updatePassword, forgotPassword, sendMoney, accountBalance, accountStatement, otpGenerate, deleteTransaction, paymentThroughDebitCard
+} = require("../controller/userController");
 
 
 // router.post("/createBranch/hdfc/:branch", createBranch);
@@ -19,16 +21,16 @@ router.post("/user/register", (req, res) => {
 router.post("/user/login", (req, res) => {
     res.json({ status: true, message: "login" })
 });
-router.get("/user/profile", (req, res) => {
-    res.json({ status: true, message: "getProfile" })
-});
+// router.get("/user/profile", (req, res) => {
+//     res.json({ status: true, message: "getProfile" })
+// });
 
 
 
 // -------------- user APIs -----------
 // router.post("/user/register", createAccount);
 // router.post("/user/login", login);
-// router.get("/user/profile", getProfile);
+router.get("/user/profile", getProfile);
 // router.put("/user/updatePassword", updatePassword);
 
 // router.put("/user/forgotPassword", forgotPassword);
