@@ -14,7 +14,7 @@ app.use(express.json())
 
 app.use("/", (req, res) => {
 
-    res.json({ status: true, message: "successful" })
+    res.json({ status: true, message: "banking system server created successfully" })
 })
 
 mongoose
