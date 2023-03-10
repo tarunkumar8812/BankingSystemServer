@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router()
 const { createBranch, getProfileForBankUse } = require("../controller/bankController");
-const { createAccount, login, getProfile,
+const { createAccount, login, getAllProfile, getProfile,
     updatePassword, forgotPassword, sendMoney, accountBalance, accountStatement, otpGenerate, deleteTransaction, paymentThroughDebitCard
 } = require("../controller/userController");
 
@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
 // -------------- user APIs -----------
 router.post("/user/register", createAccount);
 router.post("/user/login", login);
+router.get("/user/allProfile", getAllProfile);
 router.get("/user/profile", getProfile);
 router.put("/user/updatePassword", updatePassword);
 
