@@ -11,7 +11,9 @@ const router = express.Router()
 router.post("/register", (req, res) => {
     res.json({ status: true, message: "createAccount" })
 });
-// router.post("/login", login);
+router.post("/login",  (req, res) => {
+    res.json({ status: true, message: "login" })
+});
 // router.get("/profile", getProfile);
 // router.put("/updatePassword", updatePassword);
 
