@@ -1,0 +1,29 @@
+{
+  "name": "nodedeplolement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarunkumar8812/NodeDeplolement.git"
+  },
+  "author": "Tarun Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarunkumar8812/NodeDeplolement/issues"
+  },
+  "homepage": "https://github.com/tarunkumar8812/NodeDeplolement#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.1",
+    "nodemon": "^2.0.21"
+  }
+}
