@@ -6,12 +6,13 @@ const moment = require("moment")
 const cookieParser = require('cookie-parser')
 const router = require("./routes/route");
 const app = express()
-// is global middleware
+
+// global middlewares
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 app.use(cookieParser())
-app.use(express.json())
 app.use(multer().any())
-app.use(express.urlencoded({ extended: true }));
 
 
 const PORT = 5000
@@ -24,9 +25,15 @@ mongoose
     .catch((err) => console.log(err.message));
 
 
-app.use('/', router)
-// app.use('/admin/', router)
+app.use(
+    function (req, res, next) {
+        let time = moment().format("DD/MM/YYYY hh:mm:ss a")
+        console.log(`time : ${time} , url : ${req.url} `);
+        next();
+    }
+);
 
+app.use('/', router)
 
 app.use("/*", (req, res) => res.status(404).send({ status: false, message: "invalid Path url" }));
 
