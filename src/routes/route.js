@@ -13,29 +13,35 @@ router.get("/", (req, res) => {
     res.json({ status: true, message: "just for check" })
 });
 
-router.post("/register", (req, res) => {
+router.post("/user/register", (req, res) => {
     res.json({ status: true, message: "createAccount" })
 });
-router.post("/login",  (req, res) => {
+router.post("/user/login", (req, res) => {
     res.json({ status: true, message: "login" })
 });
-router.get("/profile", (req, res) => {
+router.get("/user/profile", (req, res) => {
     res.json({ status: true, message: "getProfile" })
 });
-// router.put("/updatePassword", updatePassword);
 
-// router.put("/forgotPassword", forgotPassword);
-// router.post("/sendMoney", sendMoney);
-// router.get("/accountBalance", accountBalance);
-// router.get("/accountStatement", accountStatement);
 
-// router.put("/otpGenerate", otpGenerate);
-// router.delete("/deleteTransaction", deleteTransaction);
-// router.post("/payment", paymentThroughDebitCard);
+
+// -------------- user APIs -----------
+// router.post("/user/register", createAccount);
+// router.post("/user/login", login);
+// router.get("/user/profile", getProfile);
+// router.put("/user/updatePassword", updatePassword);
+
+// router.put("/user/forgotPassword", forgotPassword);
+// router.post("/user/sendMoney", sendMoney);
+// router.get("/user/accountBalance", accountBalance);
+// router.get("/user/accountStatement", accountStatement);
+
+// router.put("/user/otpGenerate", otpGenerate);
+// router.delete("/user/deleteTransaction", deleteTransaction);
+// router.post("/user/payment", paymentThroughDebitCard);
 // router.post("/payment", makePayment);
 
 module.exports = router
-
 
 
 // Api's which we have to create

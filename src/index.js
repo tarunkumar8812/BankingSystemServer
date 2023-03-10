@@ -24,8 +24,8 @@ mongoose
     .catch((err) => console.log(err.message));
 
 
-app.use('/user/', router)
-app.use('/admin/', router)
+app.use('/', router)
+// app.use('/admin/', router)
 
 
 app.use("/*", (req, res) => res.status(404).send({ status: false, message: "invalid Path url" }));
