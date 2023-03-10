@@ -131,7 +131,23 @@ async function login(req, res) {
 
 }
 
+// ------------------------------- Get Profile of all users -------------------------------
+async function getAllProfile(req, res) {
+    try {
+        let data = req.body
+        let { loginId, password } = data
+        let userProfile = await accountModel.find().select({_id: 0, OTP: 0, countOTP: 0, isBlock: 0, cvvNumber: 0, pinNumber: 0, expiryDate: 0, openingDate: 0, closingDate: 0, isDeleted: 0, createdAt: 0, updatedAt: 0, __v: 0})
 
+        if (!userProfile) {
+            return res.status(404).send({ status: false, message: "data not found" })
+        }
+
+        return res.status(200).send({ status: true, message: "Success", data: userProfile })
+    }
+    catch (err) {
+        res.status(500).send({ status: false, message: err.message })
+    }
+}
 // ------------------------------- Get Profile -------------------------------
 async function getProfile(req, res) {
     try {
@@ -681,4 +697,4 @@ async function paymentThroughDebitCard(req, res) {
 
 
 
-module.exports = { createAccount, login, getProfile, updatePassword, sendMoney, accountBalance, accountStatement, forgotPassword, getOtpForChangePassword, otpGenerate, deleteTransaction, paymentThroughDebitCard }
+module.exports = { createAccount, login, getAllProfile, getProfile, updatePassword, sendMoney, accountBalance, accountStatement, forgotPassword, getOtpForChangePassword, otpGenerate, deleteTransaction, paymentThroughDebitCard }
