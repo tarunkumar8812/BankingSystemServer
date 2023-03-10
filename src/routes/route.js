@@ -8,13 +8,20 @@ const router = express.Router()
 // router.get("/bank/getProfileForBankUse", getProfileForBankUse);
 
 // -------------- user APIs -----------
+
+router.get("/", (req, res) => {
+    res.json({ status: true, message: "just for check" })
+});
+
 router.post("/register", (req, res) => {
     res.json({ status: true, message: "createAccount" })
 });
 router.post("/login",  (req, res) => {
     res.json({ status: true, message: "login" })
 });
-// router.get("/profile", getProfile);
+router.get("/profile", (req, res) => {
+    res.json({ status: true, message: "getProfile" })
+});
 // router.put("/updatePassword", updatePassword);
 
 // router.put("/forgotPassword", forgotPassword);
